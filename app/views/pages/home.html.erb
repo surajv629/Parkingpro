@@ -1,6 +1,10 @@
 <div class="center">
 	<h1>Hello</h1>
 	<p>Welcome to your solution for your parking problems. Sign up today to find out more.</p>
-			<%= link_to "Log in", "#", class: "btn btn-default btn-lg" %>
-      <%= link_to "Sign up","#", class: "btn btn-primary btn-lg" %>
+		<% if user_signed_in? %>
+         Find the closest parking assistants. 
+     <% else %>
+			<%= link_to "Log in", new_user_session_path, class: "btn btn-default btn-lg" %>
+      <%= link_to "Sign up",new_user_registration_path, class: "btn btn-primary btn-lg" %>
+    <% end %>  
 </div>
